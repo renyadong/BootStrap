@@ -11,7 +11,7 @@
 	<script src="js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
 
 	<body>
-		<form action="" method="post" class="form-horizontal">
+		<form action="#" method="get" class="form-horizontal">
 			<div align="center" style="height:50px;">
 				<label style="position: absolute;left: 650px;top:10px; color:brown;font-family:华文行楷;font-weight: bolder;font-size: x-large;">用户登录</label>
 			</div>
@@ -52,7 +52,43 @@
 		$(function() {
 			$("b").click(function() {
 				var text = $("b").text();
-				$(this).parent().attr("href","regist.html");
+				$(this).parent().attr("href", "regist.html");
+			});
+			var flag1 = false;
+			var flag2 = false;
+			$("form").submit(function() {
+				var userName = $("[type='text']").val();
+				var passWord = $("[type='password']").val();
+				if(userName == null || userName == "") {
+					$("[type='text']").after("<small id='small2' style='color: red;font-weight: bolder;'>用户名不允许为空</small>");
+					$("#small2").fadeToggle(3000);
+					flag1 = false;
+				} else {
+					if(userName == "任亚东") {
+						flag1 = true;
+					} else {
+						$("[type='text']").after("<small id='small2' style='color: red;font-weight: bolder;'>用户名输入错误</small>");
+						$("#small2").fadeToggle(3000);
+						flag1 = false;
+					}
+				}
+				if(passWord == null || passWord == "") {
+					$("[type='password']").after("<small id='small3' style='color: red;font-weight: bolder;'>密码不允许为空</small>");
+					$("#small3").fadeToggle(3000);
+					flag2 = false;
+				}else {
+					if(passWord == "123") {
+//						$(this).attr("action", "pre.html");
+						flag2 = true;
+					} else {
+						$("[type='password']").after("<small id='small3' style='color: red;font-weight: bolder;'>密码输入错误</small>");
+						$("#small3").fadeToggle(3000);
+						flag2 = false;
+					}
+				}
+				if(flag1 == true &&　flag2 == true) {
+					$(this).attr("action", "pre.html");
+				}
 			});
 		})
 	</script>
