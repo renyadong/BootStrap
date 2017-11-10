@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>登录页面</title>
+	</head>
+	<link rel="stylesheet" href="css/bootstrap.min.css" />
+	<script src="js/jquery-1.10.2.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/love.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+
+	<body>
+		<form action="" method="post" class="form-horizontal">
+			<div align="center" style="height:50px;">
+				<label style="position: absolute;left: 650px;top:10px; color:brown;font-family:华文行楷;font-weight: bolder;font-size: x-large;">用户登录</label>
+			</div>
+			<div class="form-group">
+				<label class="col-lg-5 control-label">用户名：</label>
+				<div class="col-lg-3">
+					<input type="text" id="" value="" class="col-lg-8 form-control" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-lg-5 control-label">密码：</label>
+				<div class="col-lg-3">
+					<input type="password" id="" value="" class="col-sm-8 form-control" />
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="col-sm-offset-5 col-sm-7">
+					<div class="checkbox">
+						<label style="color: darkblue;font-weight: bold;font-size: medium;">
+          					<input type="checkbox" border="3">请记住我
+						</label>
+					</div>
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="col-sm-3 col-sm-offset-5">
+					<input type="submit" id="" value="登录" class="form-control btn-success" />
+				</div>
+			</div>
+			<div class="form-group form-inline">
+				<div class="col-sm-2 col-sm-offset-6">
+					<small style="color: red;">没有账户？请点击<a href="#"><b style="color: green">这里</b></a></small>
+				</div>
+			</div>
+		</form>
+	</body>
+	<script type="text/javascript">
+		$(function() {
+			$("b").click(function() {
+				var text = $("b").text();
+				$(this).parent().attr("href","regist.html");
+			});
+		})
+	</script>
+
+</html>
